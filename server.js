@@ -77,7 +77,6 @@ router.post('/login', function(req, res) {
 
 app.use('/api', router);
 
-
-
-app.listen(8000);
-console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
+var listener = app.listen(8888, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+});
