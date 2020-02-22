@@ -77,13 +77,7 @@ router.post('/login', function(req, res) {
 
 app.use('/api', router);
 
-const PORT = process.env.PORT || 3000;
-const INDEX = '/index.html';
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname+ '/public' }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 
-//app.listen(8000);
-//console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
+app.listen(8000);
+console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
