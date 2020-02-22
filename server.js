@@ -77,6 +77,17 @@ router.post('/login', function(req, res) {
 
 app.use('/api', router);
 
-var listener = app.listen(8888, function(){
-    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+
+const http = require('http');
+const PORT = process.env.PORT || 5000;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
 });
+server.listen(PORT, () => {
+  console.log(`Server running on ${PORT}/`);
+});
+
+//app.listen(8000);
+//console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
