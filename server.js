@@ -79,6 +79,6 @@ app.use('/api', router);
 
 var port = process.env.PORT || 8080;
 
-
-app.listen(8000);
-console.log('Open http://localhost:8000 to access the files now'); 			// shoutout to the user
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
